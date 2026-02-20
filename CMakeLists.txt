@@ -232,11 +232,13 @@ endif()
 if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
   if(ZLIB_BUILD_SHARED_LIBS)
     install(TARGETS zlib
+        EXPORT zlib
         RUNTIME DESTINATION "${INSTALL_BIN_DIR}"
         LIBRARY DESTINATION "${INSTALL_LIB_DIR}" )
   endif()
   if(ZLIB_BUILD_STATIC_LIBS)
     install(TARGETS zlibstatic
+        EXPORT zlib
         ARCHIVE DESTINATION "${INSTALL_LIB_DIR}" )
   endif()
 endif()
